@@ -9,15 +9,10 @@ import ShowerCloud from "../assets/Shower.png";
 import BackgroundImg from "../assets/Cloud-background.png";
 
 const SideBar = ({ location }) => {
-//   let { consolidated_weather } = location;
-
-//   console.log(location === {})
-
   return (
-
-        <div className="sidebar">
+    <div className="sidebar">
       {location !== null && (
-          <>
+        <>
           <div className="location-btns">
             <button className="search-btn">Search for places</button>
             <button className="current-loc-btn">
@@ -48,10 +43,9 @@ const SideBar = ({ location }) => {
               <span>{location.title}</span>
             </div>
           </div>
-          </>
+        </>
       )}
-        </div>
-   
+    </div>
   );
 };
 
