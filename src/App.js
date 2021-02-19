@@ -1,35 +1,31 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { connect } from "react-redux";
+// import axios from "axios";
 
 import SideBar from "./components/sidebar";
 
+import { setLocation } from "./actions/setLocationActions";
+import { weatherAPI } from "./utils/weatherAPI";
+
 import "./styles/index.css";
 
-function App() {
-  const [location, setLocation] = useState(null);
-
-  const baseUrl = `https://tranquil-bayou-42049.herokuapp.com/`;
-
-  const hitAPI = () => {
-    axios
-      .get(`${baseUrl}https://www.metaweather.com/api/location/44418/`)
+function App(props) {
+  useEffect(() => {
+    weatherAPI()
+      .get("location/44418/")
       .then((res) => {
-        console.log(res.data);
-        setLocation(res.data);
+        console.log("api res", res.data);
+        props.setLocation(res.data);
       })
       .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    hitAPI();
   }, []);
 
   return (
     <div className="App">
-      <SideBar location={location} />
+      <SideBar />
       {/* <button onClick={hitAPI}>Hit API</button> */}
     </div>
   );
 }
 
-export default App;
+export default connect(null, { setLocation })(App);

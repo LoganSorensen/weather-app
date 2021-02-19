@@ -4,14 +4,15 @@ import {
   faLocationArrow,
   faMapMarkerAlt,
 } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
 
 import ShowerCloud from "../assets/Shower.png";
 import BackgroundImg from "../assets/Cloud-background.png";
 
-const SideBar = ({ location }) => {
+const SideBar = ({ cityName, weather }) => {
   return (
     <div className="sidebar">
-      {location !== null && (
+      {weather[0] !== undefined && (
         <>
           <div className="location-btns">
             <button className="search-btn">Search for places</button>
@@ -26,21 +27,19 @@ const SideBar = ({ location }) => {
           <div className="weather-info">
             <div className="temperature">
               <p>
-                {Math.round(location.consolidated_weather[0].the_temp)}
+                {Math.round(weather[0].the_temp)}
                 <span>°C</span>
               </p>
             </div>
-            <p className="weather-type">
-              {location.consolidated_weather[0].weather_state_name}
-            </p>
+            <p className="weather-type">{weather[0].weather_state_name}</p>
             <div className="date">
               <span>Today</span>
               <span>•</span>
-              <span>{location.consolidated_weather[0].applicable_date}</span>
+              <span>{weather[0].applicable_date}</span>
             </div>
             <div className="location">
               <FontAwesomeIcon icon={faMapMarkerAlt} />
-              <span>{location.title}</span>
+              <span>{cityName}</span>
             </div>
           </div>
         </>
@@ -49,4 +48,12 @@ const SideBar = ({ location }) => {
   );
 };
 
-export default SideBar;
+const mapStateToProps = (state) => {
+  console.log("state", state);
+  return {
+    cityName: state.setLocation.cityName,
+    weather: state.setLocation.weather,
+  };
+};
+
+export default connect(mapStateToProps, {})(SideBar);
