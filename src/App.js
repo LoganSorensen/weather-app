@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { connect } from "react-redux";
-// import axios from "axios";
 
 import SideBar from "./components/sidebar";
+import SideBarSearch from './components/sideBarSearch';
 
 import { setLocation } from "./actions/setLocationActions";
 import { weatherAPI } from "./utils/weatherAPI";
@@ -14,7 +14,6 @@ function App(props) {
     weatherAPI()
       .get("location/44418/")
       .then((res) => {
-        console.log("api res", res.data);
         props.setLocation(res.data);
       })
       .catch((err) => console.log(err));
@@ -23,7 +22,7 @@ function App(props) {
   return (
     <div className="App">
       <SideBar />
-      {/* <button onClick={hitAPI}>Hit API</button> */}
+      <SideBarSearch />
     </div>
   );
 }

@@ -171,6 +171,7 @@ html {
 }
 .App {
   background-color: #100e1d;
+  position: relative;
 }
 .sidebar {
   background-color: #1e213a;
@@ -254,4 +255,89 @@ html {
 }
 .sidebar .location svg {
   margin-right: 2%;
+}
+.sidebar-search {
+  position: fixed;
+  padding-top: 1%;
+  top: 0;
+  left: -25%;
+  z-index: 1;
+  transition: 0.4s ease;
+}
+.sidebar-search .close-btn {
+  border: none;
+  background-color: transparent;
+  color: #e7e7eb;
+  width: 7%;
+  font-size: 2.5rem;
+  margin-left: 93%;
+  text-align: center;
+  cursor: pointer;
+}
+.sidebar-search form {
+  margin-top: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar-search form .search-icon {
+  color: #616475;
+  position: absolute;
+  margin-left: 2%;
+  font-size: 1.6rem;
+}
+.sidebar-search form input {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e7e7eb;
+  border: 1px solid #e7e7eb;
+  background-color: transparent;
+  padding: 0.8em;
+  padding-left: 2em;
+  width: 72%;
+}
+.sidebar-search form input::placeholder {
+  color: #616475;
+}
+.sidebar-search form button {
+  color: #e7e7eb;
+  background-color: #3c47e9;
+  border: 1px solid #3c47e9;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.8em;
+  width: 25%;
+}
+.sidebar-search .search-options {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15%;
+}
+.sidebar-search .search-options .search-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5em;
+  margin-bottom: 5%;
+  color: #e7e7eb;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sidebar-search .search-options .search-option:hover {
+  border-color: #616475;
+}
+.sidebar-search .search-options .search-option:hover svg {
+  visibility: visible;
+}
+.sidebar-search .search-options .search-option svg {
+  color: #616475;
+  visibility: hidden;
+}
+.sidebar-search--open {
+  left: 0;
 }

@@ -1,8 +1,15 @@
-import { SET_LOCATION } from "../actions/types";
+import {
+  SET_LOCATION,
+  FETCHING_LOCATION_START,
+  FETCHING_LOCATION_SUCCESS,
+  FETCHING_LOCATION_FAILURE,
+} from "../actions/types";
 
 const inititalState = {
+  isLoading: false,
   weather: [],
   cityName: "",
+  error: "",
 };
 
 export const setLocation = (state = inititalState, action) => {
@@ -12,6 +19,23 @@ export const setLocation = (state = inititalState, action) => {
         ...state,
         weather: action.payload.consolidated_weather,
         cityName: action.payload.title,
+      };
+    case FETCHING_LOCATION_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case FETCHING_LOCATION_SUCCESS:
+      return {
+        state,
+        isLoading: false,
+        weather: action.payload.consolidated_weather,
+        cityName: action.payload.title,
+      };
+    case FETCHING_LOCATION_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
       };
     default:
       return state;

@@ -10,12 +10,19 @@ import ShowerCloud from "../assets/Shower.png";
 import BackgroundImg from "../assets/Cloud-background.png";
 
 const SideBar = ({ cityName, weather }) => {
+  const openSearch = () => {
+    let search = document.querySelector(".sidebar-search");
+    search.classList.add("sidebar-search--open");
+  };
+
   return (
     <div className="sidebar">
       {weather[0] !== undefined && (
         <>
           <div className="location-btns">
-            <button className="search-btn">Search for places</button>
+            <button className="search-btn" onClick={openSearch}>
+              Search for places
+            </button>
             <button className="current-loc-btn">
               <FontAwesomeIcon icon={faLocationArrow} />
             </button>
@@ -49,7 +56,6 @@ const SideBar = ({ cityName, weather }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("state", state);
   return {
     cityName: state.setLocation.cityName,
     weather: state.setLocation.weather,
