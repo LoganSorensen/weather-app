@@ -26,8 +26,7 @@ const SideBarSearch = (props) => {
     weatherAPI()
       .get(`location/search/?query=${search}`)
       .then((res) => {
-        console.log(res.data[0].woeid);
-        props.fetchLocation(res.data[0].woeid)
+        props.fetchLocation(res.data[0].woeid);
       })
       .catch((err) => console.log(err));
     setSearch("");
@@ -67,4 +66,4 @@ const SideBarSearch = (props) => {
   );
 };
 
-export default connect(null, {fetchLocation})(SideBarSearch);
+export default connect(null, { fetchLocation })(SideBarSearch);

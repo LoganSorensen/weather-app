@@ -379,3 +379,96 @@ html {
 .forecast .weather-card .min-temp {
   color: #a09fb1;
 }
+.highlights {
+  margin-top: 10%;
+  height: 45vh;
+}
+.highlights h2 {
+  color: #e7e7eb;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.highlights .highlight-cards {
+  height: 100%;
+  margin-top: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.highlights .highlight-card {
+  color: #e7e7eb;
+  background-color: #1e213a;
+  width: 47%;
+  height: 40%;
+  padding: 3%;
+  text-align: center;
+  margin-top: 5%;
+}
+.highlights .highlight-card h3 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 3%;
+}
+.highlights .highlight-card p {
+  font-size: 6.4rem;
+  font-weight: 700;
+}
+.highlights .highlight-card span {
+  font-size: 3.6rem;
+  font-weight: 400;
+}
+.highlights .top-card {
+  height: 50%;
+  margin: 0;
+}
+.highlights .wind-direction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20%;
+  margin: 4% auto 0;
+}
+.highlights .wind-direction .compass {
+  width: 30px;
+  height: 30px;
+  padding: 20%;
+  background-color: #616475;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.highlights .wind-direction svg {
+  width: 1.5rem;
+}
+.highlights .wind-direction span {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.highlights .percentage-display {
+  width: 80%;
+  margin: 2% auto 0;
+}
+.highlights .percentage-display .percentage-numbers {
+  display: flex;
+  justify-content: space-between;
+}
+.highlights .percentage-display .percentage-bar {
+  height: 8px;
+  background-color: #e7e7eb;
+  border-radius: 80px;
+  margin: 2% 0;
+}
+.highlights .percentage-display .bar-filled {
+  height: 8px;
+  background-color: #ffec65;
+  border-radius: 80px;
+}
+.highlights .percentage-display span {
+  color: #a09fb1;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.highlights .percentage-display .percent-symbol {
+  margin-left: 97%;
+}

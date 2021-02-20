@@ -1,0 +1,110 @@
+.highlights {
+  margin-top: 10%;
+  height: 45vh;
+
+  h2 {
+    color: @text-white;
+    font-size: 2.4rem;
+    font-weight: 700;
+  }
+
+  .highlight-cards {
+    height: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .highlight-card {
+    color: @text-white;
+    background-color: @bg-light;
+    width: 47%;
+    height: 40%;
+    padding: 3%;
+    text-align: center;
+    margin-top: 5%;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 3%;
+    }
+
+    p {
+      font-size: 6.4rem;
+      font-weight: 700;
+    }
+
+    span {
+      font-size: 3.6rem;
+      font-weight: 400;
+    }
+  }
+
+  .top-card {
+    height: 50%;
+    margin: 0;
+  }
+
+  .wind-direction {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    margin: 4% auto 0;
+
+    .compass {
+      width: 30px;
+      height: 30px;
+      padding: 20%;
+      background-color: #616475;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    svg {
+      width: 1.5rem;
+    }
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+  }
+
+  .percentage-display {
+    width: 80%;
+    margin: 2% auto 0;
+
+    .percentage-numbers {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .percentage-bar {
+      height: 8px;
+      background-color: @text-white;
+      border-radius: 80px;
+      margin: 2% 0;
+    }
+
+    .bar-filled {
+      height: 8px;
+      background-color: #ffec65;
+      border-radius: 80px;
+    }
+
+    span {
+      color: @text-gray;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .percent-symbol {
+      margin-left: 97%;
+    }
+  }
+}

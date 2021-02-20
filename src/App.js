@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 
 import SideBar from "./components/sidebar";
-import SideBarSearch from './components/sideBarSearch';
-import FiveDayForecast from './components/fiveDayForecast';
+import SideBarSearch from "./components/sideBarSearch";
+import FiveDayForecast from "./components/fiveDayForecast";
+import Highlights from "./components/highlights";
 
 import { setLocation } from "./actions/setLocationActions";
 import { weatherAPI } from "./utils/weatherAPI";
@@ -24,8 +25,9 @@ function App(props) {
     <div className="App">
       <SideBar />
       <SideBarSearch />
-      <div className='forecast-and-highlights'>
+      <div className="forecast-and-highlights">
         <FiveDayForecast />
+        <Highlights />
       </div>
     </div>
   );

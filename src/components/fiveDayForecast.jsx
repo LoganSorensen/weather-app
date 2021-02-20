@@ -19,15 +19,13 @@ const FiveDayForecast = (props) => {
     return `${splitDate[0]}, ${splitDate[2]} ${splitDate[1]}`;
   };
 
-  console.log(props.weather)
-
   return (
     <div className="forecast">
       {forecast.map((weather) => {
         if (weather !== forecast[0]) {
           setWeatherImg(weather);
           return (
-            <div className="weather-card">
+            <div className="weather-card" key={weather.id}>
               <div>
                 <span className="day-of-week">
                   {formatDate(weather.applicable_date)}
