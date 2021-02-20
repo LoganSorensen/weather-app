@@ -15,7 +15,6 @@ export const fetchLocation = (woeid) => (dispatch) => {
   weatherAPI()
     .get(`location/${woeid}/`)
     .then((res) => {
-      console.log('action res', res.data);
       dispatch({ type: FETCHING_LOCATION_SUCCESS, payload: res.data });
     })
     .catch((err) => {

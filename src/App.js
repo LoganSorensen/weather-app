@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import SideBar from "./components/sidebar";
 import SideBarSearch from './components/sideBarSearch';
+import FiveDayForecast from './components/fiveDayForecast';
 
 import { setLocation } from "./actions/setLocationActions";
 import { weatherAPI } from "./utils/weatherAPI";
@@ -23,6 +24,9 @@ function App(props) {
     <div className="App">
       <SideBar />
       <SideBarSearch />
+      <div className='forecast-and-highlights'>
+        <FiveDayForecast />
+      </div>
     </div>
   );
 }
