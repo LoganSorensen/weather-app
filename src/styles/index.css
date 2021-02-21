@@ -337,13 +337,13 @@ html {
   padding: 0.8em;
   width: 25%;
 }
-.sidebar-search .search-options {
+.sidebar-search .search-history {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 15%;
 }
-.sidebar-search .search-options .search-option {
+.sidebar-search .search-history .search-option {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -356,13 +356,13 @@ html {
   font-weight: 500;
   cursor: pointer;
 }
-.sidebar-search .search-options .search-option:hover {
+.sidebar-search .search-history .search-option:hover {
   border-color: #616475;
 }
-.sidebar-search .search-options .search-option:hover svg {
+.sidebar-search .search-history .search-option:hover svg {
   visibility: visible;
 }
-.sidebar-search .search-options .search-option svg {
+.sidebar-search .search-history .search-option svg {
   color: #616475;
   visibility: hidden;
 }
@@ -460,9 +460,6 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.highlights .wind-direction svg {
-  width: 1.6rem;
 }
 .highlights .wind-direction span {
   font-size: 1.4rem;

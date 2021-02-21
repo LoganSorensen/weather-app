@@ -12,6 +12,8 @@ import { weatherAPI } from "../utils/weatherAPI";
 
 const SideBarSearch = (props) => {
   const [search, setSearch] = useState("");
+  const [searchHistory, setSearchHistory] = useState([]);
+
   const closeSearch = () => {
     let search = document.querySelector(".sidebar-search");
     search.classList.remove("sidebar-search--open");
@@ -27,8 +29,18 @@ const SideBarSearch = (props) => {
       .get(`location/search/?query=${search}`)
       .then((res) => {
         props.fetchLocation(res.data[0].woeid);
+        setSearchHistory([
+          ...searchHistory,
+          { title: res.data[0].title, id: res.data[0].woeid },
+        ]);
       })
       .catch((err) => console.log(err));
+    setSearch("");
+    closeSearch();
+  };
+
+  const searchFromHistory = (e) => {
+    props.fetchLocation(e.target.value);
     setSearch("");
     closeSearch();
   };
@@ -48,19 +60,20 @@ const SideBarSearch = (props) => {
         />
         <button>Search</button>
       </form>
-      <div className="search-options">
-        <button className="search-option">
-          <span>London</span>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-        <button className="search-option">
-          <span>Barcelona</span>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
-        <button className="search-option">
-          <span>Long Beach</span>
-          <FontAwesomeIcon icon={faChevronRight} />
-        </button>
+      <div className="search-history">
+        {searchHistory.map((search) => {
+          return (
+            <button
+            key={search.id}
+              value={search.id}
+              className="search-option"
+              onClick={searchFromHistory}
+            >
+              <span>{search.title}</span>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          );
+        })}
       </div>
     </div>
   );

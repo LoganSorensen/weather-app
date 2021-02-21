@@ -31,6 +31,7 @@ export const setLocation = (state = inititalState, action) => {
       return {
         state,
         isLoading: false,
+        isCelcius: state.isCelcius,
         weather: action.payload.consolidated_weather,
         cityName: action.payload.title,
       };

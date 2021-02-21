@@ -27,6 +27,8 @@ function App(props) {
     }
   };
 
+  console.log('celcius',props.isCelcius)
+
   return (
     <div className="App">
       <SideBar />
@@ -56,6 +58,7 @@ function App(props) {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state)
   return {
     isCelcius: state.setLocation.isCelcius,
   };
