@@ -13,6 +13,10 @@ html {
 .App {
   background-color: @bg-dark;
   display: flex;
+
+  @media @mobile-large {
+    flex-direction: column;
+  }
 }
 
 .loader {
@@ -26,6 +30,10 @@ html {
 .forecast-and-highlights {
   padding: 2% 10% 5%;
   width: 100%;
+
+  @media @mobile-large {
+    padding: 2% 6% 5%;
+  }
 }
 
 .temp-btns {
@@ -33,6 +41,10 @@ html {
   width: 99%;
   display: flex;
   justify-content: flex-end;
+
+  @media @mobile-large {
+    display: none;
+  }
 
   button {
     width: 40px;

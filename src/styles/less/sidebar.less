@@ -6,6 +6,12 @@
   padding: 2%;
   overflow: hidden;
 
+  @media @mobile-large {
+    height: auto;
+    min-width: 100%;
+    padding: 3% 3% 7%;
+  }
+
   .location-btns {
     display: flex;
     align-items: center;
@@ -86,6 +92,11 @@
     color: #88869d;
     font-size: 1.8rem;
     font-weight: 500;
+
+    @media @mobile-large {
+      width: 70%;
+    }
+
   }
 
   .location {
