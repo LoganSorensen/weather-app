@@ -173,6 +173,13 @@ html {
   background-color: #100e1d;
   display: flex;
 }
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .forecast-and-highlights {
   padding: 2% 10% 5%;
   width: 100%;

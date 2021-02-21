@@ -42,8 +42,9 @@ export const setLocation = (state = inititalState, action) => {
       };
     case TOGGLE_CELCIUS:
       return {
-        ...state, isCelcius: !state.isCelcius
-      }
+        ...state,
+        isCelcius: !state.isCelcius,
+      };
     default:
       return state;
   }

@@ -64,7 +64,7 @@ const SideBarSearch = (props) => {
         {searchHistory.map((search) => {
           return (
             <button
-            key={search.id}
+              key={search.id}
               value={search.id}
               className="search-option"
               onClick={searchFromHistory}

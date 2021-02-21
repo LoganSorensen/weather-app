@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 import SideBar from "./components/sidebar";
 import SideBarSearch from "./components/sideBarSearch";
@@ -27,40 +28,50 @@ function App(props) {
     }
   };
 
-  console.log('celcius',props.isCelcius)
-
   return (
     <div className="App">
       <SideBar />
       <SideBarSearch />
-      <div className="forecast-and-highlights">
-        <div className="temp-btns">
-          <button
-            className={props.isCelcius === true ? "temp-btn--active" : ""}
-            value="C"
-            onClick={changeTemp}
-          >
-            °C
-          </button>
-          <button
-            className={props.isCelcius === false ? "temp-btn--active" : ""}
-            value="F"
-            onClick={changeTemp}
-          >
-            °F
-          </button>
+      {props.isLoading ? (
+        <div className="loader">
+          <Loader
+            type="RevolvingDot"
+            color="#e7e7e7"
+            height={100}
+            width={100}
+            timeout={3000} //3 secs
+          />
         </div>
-        <FiveDayForecast />
-        <Highlights />
-      </div>
+      ) : (
+        <div className="forecast-and-highlights">
+          <div className="temp-btns">
+            <button
+              className={props.isCelcius === true ? "temp-btn--active" : ""}
+              value="C"
+              onClick={changeTemp}
+            >
+              °C
+            </button>
+            <button
+              className={props.isCelcius === false ? "temp-btn--active" : ""}
+              value="F"
+              onClick={changeTemp}
+            >
+              °F
+            </button>
+          </div>
+          <FiveDayForecast />
+          <Highlights />
+        </div>
+      )}
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state)
   return {
     isCelcius: state.setLocation.isCelcius,
+    isLoading: state.setLocation.isLoading,
   };
 };
 
