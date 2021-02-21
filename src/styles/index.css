@@ -231,7 +231,6 @@ html {
 }
 @media (max-width: 425px) {
   .sidebar {
-    height: auto;
     min-width: 100%;
     padding: 3% 3% 7%;
   }
@@ -266,6 +265,12 @@ html {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 425px) {
+  .sidebar .weather-icon-cont {
+    height: 8%;
+    margin-top: 40%;
+  }
+}
 .sidebar .background-img {
   opacity: 10%;
   width: 180%;
@@ -278,21 +283,41 @@ html {
   text-align: center;
   margin-top: 35%;
 }
+@media (max-width: 425px) {
+  .sidebar .weather-info {
+    margin-top: 30%;
+  }
+}
 .sidebar .temperature p {
   font-size: 14.4rem;
   font-weight: 500;
   color: #e7e7eb;
+}
+@media (max-width: 425px) {
+  .sidebar .temperature p {
+    font-size: 12rem;
+  }
 }
 .sidebar .temperature span {
   font-size: 4.8rem;
   font-weight: 400;
   color: #a09fb1;
 }
+@media (max-width: 425px) {
+  .sidebar .temperature span {
+    font-size: 4rem;
+  }
+}
 .sidebar .weather-type {
   margin: 18% 0;
   color: #a09fb1;
   font-size: 3.6rem;
   font-weight: 600;
+}
+@media (max-width: 425px) {
+  .sidebar .weather-type {
+    margin: 10% 0;
+  }
 }
 .sidebar .date {
   width: 40%;
