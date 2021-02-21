@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
 
-const SideBar = ({ cityName, weather }) => {
+const SideBar = ({ cityName, weather, isCelcius }) => {
   const openSearch = () => {
     let search = document.querySelector(".sidebar-search");
     search.classList.add("sidebar-search--open");
@@ -21,6 +21,14 @@ const SideBar = ({ cityName, weather }) => {
     const date = new Date(dateString);
     const splitDate = date.toString().split(" ");
     return `${splitDate[0]}, ${splitDate[2]} ${splitDate[1]}`;
+  };
+
+  const setTemp = (temp) => {
+    if (isCelcius === true) {
+      return Math.round(temp);
+    } else {
+      return Math.round((temp * 9) / 5 + 32);
+    }
   };
 
   return (
@@ -50,8 +58,8 @@ const SideBar = ({ cityName, weather }) => {
           <div className="weather-info">
             <div className="temperature">
               <p>
-                {Math.round(weather[0].the_temp)}
-                <span>°C</span>
+                {setTemp(weather[0].the_temp)}
+                <span>{isCelcius === true ? "°C" : "°F"}</span>
               </p>
             </div>
             <p className="weather-type">{weather[0].weather_state_name}</p>
@@ -75,6 +83,7 @@ const mapStateToProps = (state) => {
   return {
     cityName: state.setLocation.cityName,
     weather: state.setLocation.weather,
+    isCelcius: state.setLocation.isCelcius,
   };
 };
 

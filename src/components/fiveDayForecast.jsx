@@ -19,6 +19,14 @@ const FiveDayForecast = (props) => {
     return `${splitDate[0]}, ${splitDate[2]} ${splitDate[1]}`;
   };
 
+  const setTemp = (temp) => {
+    if (props.isCelcius === true) {
+      return Math.round(temp);
+    } else {
+      return Math.round((temp * 9) / 5 + 32);
+    }
+  };
+
   return (
     <div className="forecast">
       {forecast.map((weather) => {
@@ -36,9 +44,13 @@ const FiveDayForecast = (props) => {
                 />
               </div>
               <div className="temperatures">
-                <span>{Math.round(weather.max_temp)}°C</span>
+                <span>
+                  {setTemp(weather.max_temp)}
+                  {props.isCelcius === true ? "°C" : "°F"}
+                </span>
                 <span className="min-temp">
-                  {Math.round(weather.min_temp)}°C
+                  {setTemp(weather.min_temp)}
+                  {props.isCelcius === true ? "°C" : "°F"}
                 </span>
               </div>
             </div>
@@ -52,6 +64,7 @@ const FiveDayForecast = (props) => {
 const mapStateToProps = (state) => {
   return {
     weather: state.setLocation.weather,
+    isCelcius: state.setLocation.isCelcius,
   };
 };
 

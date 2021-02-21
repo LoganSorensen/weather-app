@@ -3,6 +3,7 @@ import {
   FETCHING_LOCATION_START,
   FETCHING_LOCATION_SUCCESS,
   FETCHING_LOCATION_FAILURE,
+  TOGGLE_CELCIUS,
 } from "./types";
 import { weatherAPI } from "../utils/weatherAPI";
 
@@ -21,4 +22,8 @@ export const fetchLocation = (woeid) => (dispatch) => {
       console.log(err);
       dispatch({ type: FETCHING_LOCATION_FAILURE, payload: err });
     });
+};
+
+export const toggleCelcius = () => {
+  return { type: TOGGLE_CELCIUS };
 };

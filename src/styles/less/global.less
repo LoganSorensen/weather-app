@@ -16,6 +16,31 @@ html {
 }
 
 .forecast-and-highlights {
-  padding: 5% 10%;
+  padding: 2% 10% 5%;
   width: 100%;
+}
+
+.temp-btns {
+  margin-bottom: 4%;
+  width: 99%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    margin-left: 1%;
+    background-color: #585676;
+    color: @text-white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .temp-btn--active {
+    background-color: @text-white;
+    color: #110e3c;
+  }
 }

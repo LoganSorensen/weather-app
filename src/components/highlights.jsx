@@ -12,6 +12,8 @@ const Highlights = (props) => {
 
   return (
     <div className="highlights">
+      {weather !== undefined && (
+<>
       <h2>Today's Highlights</h2>
       <div className="highlight-cards">
         <div className="highlight-card top-card">
@@ -71,6 +73,8 @@ const Highlights = (props) => {
           </p>
         </div>
       </div>
+      </>
+      )}
     </div>
   );
 };

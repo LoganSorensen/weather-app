@@ -3,10 +3,12 @@ import {
   FETCHING_LOCATION_START,
   FETCHING_LOCATION_SUCCESS,
   FETCHING_LOCATION_FAILURE,
+  TOGGLE_CELCIUS,
 } from "../actions/types";
 
 const inititalState = {
   isLoading: false,
+  isCelcius: true,
   weather: [],
   cityName: "",
   error: "",
@@ -37,6 +39,10 @@ export const setLocation = (state = inititalState, action) => {
         ...state,
         error: action.payload,
       };
+    case TOGGLE_CELCIUS:
+      return {
+        ...state, isCelcius: !state.isCelcius
+      }
     default:
       return state;
   }
