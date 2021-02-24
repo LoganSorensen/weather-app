@@ -68,7 +68,7 @@ const Highlights = (props) => {
             <div className="highlight-card">
               <h3>Air Pressure</h3>
               <p>
-                {weather.air_pressure}
+                {Math.round(weather.air_pressure)}
                 <span> mb</span>
               </p>
             </div>
