@@ -30,7 +30,6 @@ function App(props) {
   };
 
   const error = (error) => {
-    console.log(error);
     weatherAPI()
       .get("location/44418/")
       .then((res) => {

@@ -168,9 +168,9 @@ table {
 html {
   font-size: 62.5%;
   font-family: "Raleway", sans-serif;
+  background-color: #100e1d;
 }
 .App {
-  background-color: #100e1d;
   display: flex;
 }
 @media (max-width: 425px) {
@@ -202,6 +202,7 @@ html {
 @media (max-width: 425px) {
   .forecast-and-highlights {
     padding: 2% 6% 5%;
+    margin-bottom: 10%;
   }
 }
 .temp-btns {
@@ -283,13 +284,18 @@ html {
 @media (max-width: 425px) {
   .sidebar .weather-icon-cont {
     height: 8%;
-    margin-top: 40%;
+    margin-top: 30%;
   }
 }
 .sidebar .background-img {
-  opacity: 10%;
+  opacity: 0.1;
   width: 180%;
   position: absolute;
+}
+@media (max-width: 425px) {
+  .sidebar .background-img {
+    width: 150%;
+  }
 }
 .sidebar .weather-icon {
   margin: 0 auto;
@@ -297,6 +303,11 @@ html {
 @media (max-width: 1024px) {
   .sidebar .weather-icon {
     width: 80%;
+  }
+}
+@media (max-width: 425px) {
+  .sidebar .weather-icon {
+    width: 50%;
   }
 }
 .sidebar .weather-info {
@@ -340,7 +351,7 @@ html {
   }
 }
 .sidebar .date {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
   display: flex;
   justify-content: space-evenly;
@@ -475,7 +486,7 @@ html {
     height: auto;
     flex-wrap: wrap;
     margin-top: 5%;
-    padding: 8% 9% ;
+    padding: 8% 9%;
   }
 }
 .forecast .weather-card {
@@ -511,8 +522,6 @@ html {
 .forecast .weather-card img {
   margin: 3% auto 20%;
   width: 70%;
-}
-@media (max-width: 1440px) {
 }
 .forecast .weather-card .temperatures {
   width: 80%;
@@ -614,6 +623,8 @@ html {
 .highlights .wind-direction .compass {
   min-width: 30px;
   min-height: 30px;
+  max-width: 30px;
+  max-height: 30px;
   padding: 20%;
   margin-right: 10%;
   background-color: #616475;
