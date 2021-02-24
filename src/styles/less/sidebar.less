@@ -6,6 +6,10 @@
   padding: 2%;
   overflow: hidden;
 
+  @media @laptop {
+    min-width: 30%;
+  }
+
   @media @mobile-large {
     min-width: 100%;
     padding: 3% 3% 7%;
@@ -28,7 +32,7 @@
   .search-btn {
     font-size: 1.6rem;
     font-weight: 500;
-    padding: 2% 3%;
+    padding: 0.5em 0.7em;
   }
 
   .current-loc-btn {
@@ -59,13 +63,17 @@
 
   .weather-icon {
     margin: 0 auto;
+
+    @media @laptop {
+      width: 80%;
+    }
   }
 
   .weather-info {
     text-align: center;
     margin-top: 35%;
 
-    @media @mobile-large {
+    @media @laptop-large {
       margin-top: 30%;
     }
   }
@@ -98,7 +106,7 @@
     font-size: 3.6rem;
     font-weight: 600;
 
-    @media @mobile-large {
+    @media @laptop-large {
       margin: 10% 0;
     }
   }
@@ -113,8 +121,12 @@
     font-size: 1.8rem;
     font-weight: 500;
 
-    @media @mobile-large {
+    @media @laptop-large {
       width: 70%;
+    }
+
+    @media @laptop {
+      width: 100%;
     }
 
   }

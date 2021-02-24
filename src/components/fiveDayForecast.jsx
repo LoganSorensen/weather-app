@@ -34,7 +34,7 @@ const FiveDayForecast = (props) => {
           setWeatherImg(weather);
           return (
             <div className="weather-card" key={weather.id}>
-              <div>
+              <div className='date-and-icon'>
                 <span className="day-of-week">
                   {formatDate(weather.applicable_date)}
                 </span>
