@@ -7,7 +7,7 @@ import {
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 
-const SideBar = ({ cityName, weather, isCelcius, isLoading }) => {
+const SideBar = ({ cityName, weather, isCelcius, isLoading, getLocation }) => {
   const openSearch = () => {
     let search = document.querySelector(".sidebar-search");
     search.classList.add("sidebar-search--open");
@@ -35,13 +35,13 @@ const SideBar = ({ cityName, weather, isCelcius, isLoading }) => {
   return (
     <div className="sidebar">
       {isLoading ? (
-        <div className="loader">
+        <div className="loader search-loader">
           <Loader
             type="RevolvingDot"
             color="#e7e7e7"
             height={100}
             width={100}
-            timeout={3000} //3 secs
+            timeout={30000} //3 secs
           />
         </div>
       ) : (
@@ -52,7 +52,7 @@ const SideBar = ({ cityName, weather, isCelcius, isLoading }) => {
                 <button className="search-btn" onClick={openSearch}>
                   Search for places
                 </button>
-                <button className="current-loc-btn">
+                <button className="current-loc-btn" onClick={getLocation}>
                   <FontAwesomeIcon icon={faLocationArrow} />
                 </button>
               </div>

@@ -2,8 +2,9 @@
   margin-top: 8%;
   height: 45vh;
 
-  @media @mobile-large {
+  @media @tablet {
     height: auto;
+    margin-bottom: 5%;
   }
 
   h2 {
@@ -33,9 +34,12 @@
     text-align: center;
     margin-top: 5%;
 
+    @media @tablet {
+      width: 100%;
+    }
+
     @media @mobile-large {
       margin: 0 auto 5%;
-      width: 100%;
       height: 20vh;
       padding: 8%;
     }
@@ -73,8 +77,12 @@
     height: 50%;
     margin: 0;
 
-    @media @mobile-large {
+    @media @tablet {
+      margin-top: 5%;
       height: 30vh;
+    }
+
+    @media @mobile-large {
       margin-bottom: 5%;
     }
   }

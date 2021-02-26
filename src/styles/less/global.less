@@ -25,6 +25,18 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media @tablet {
+    margin-left: 30%;
+  }
+
+  @media @mobile-large {
+    margin: 0;
+  }
+}
+
+.search-loader {
+  margin: 0;
 }
 
 .forecast-and-highlights {
@@ -39,7 +51,12 @@ html {
     padding: 2% 4%;
   }
 
+  @media @tablet {
+    margin-left: 30%;
+  }
+
   @media @mobile-large {
+    margin-left: 0;
     padding: 2% 6% 5%;
     margin-bottom: 10%;
   }

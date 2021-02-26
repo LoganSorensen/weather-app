@@ -4,11 +4,14 @@
   width: 100%;
   height: 22vh;
 
-  @media @mobile-large {
-    height: auto;
+  @media @tablet {
     flex-wrap: wrap;
+    padding: 2% 9% 8%;
+    height: auto;
+  }
+  
+  @media @mobile-large {
     margin-top: 5%;
-    padding: 8% 9%;
   }
 
   .weather-card {
@@ -23,16 +26,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
+    
     @media @laptop-large {
       width: 18%;
       font-size: 1.5rem;
     }
+    
+    @media @tablet {
+      width: 40%;
+      margin-bottom: 8%;
+      height: 28vh;
+    }
 
     @media @mobile-large {
       min-height: 25vh;
-      margin-bottom: 10%;
       width: 45%;
+      margin-bottom: 10%;
+
     }
 
     .date-and-icon {
@@ -50,6 +60,10 @@
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
+
+      @media @laptop {
+        widtH: 100%;
+      }
     }
 
     .min-temp {
