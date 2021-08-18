@@ -26,7 +26,7 @@ const SideBarSearch = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     weatherAPI()
-      .get(`location/search/?query=${search}`)
+      .get(`?urlExtension=location/search/?query=${search}`)
       .then((res) => {
         props.fetchLocation(res.data[0].woeid);
         setSearchHistory([

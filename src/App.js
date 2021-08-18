@@ -22,7 +22,7 @@ function App(props) {
     const longitude = Math.round(position.coords.longitude * 100) / 100;
 
     weatherAPI()
-      .get(`location/search/?lattlong=${latitude},${longitude}`)
+      .get(`?urlExtension=location/search/?lattlong=${latitude},${longitude}`)
       .then((res) => {
         props.fetchLocation(res.data[0].woeid);
       })
@@ -31,7 +31,7 @@ function App(props) {
 
   const error = (error) => {
     weatherAPI()
-      .get("location/44418/")
+      .get("?urlExtension=location/44418/")
       .then((res) => {
         props.setLocation(res.data);
       })
