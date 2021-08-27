@@ -40,7 +40,7 @@ function App(props) {
 
   const getLocation = () => {
     navigator.geolocation.getCurrentPosition(success, error);
-  }
+  };
 
   useEffect(() => {
     getLocation();
@@ -54,7 +54,7 @@ function App(props) {
 
   return (
     <div className="App">
-      <SideBar getLocation={getLocation}/>
+      <SideBar getLocation={getLocation} />
       <SideBarSearch />
       {props.isLoading ? (
         <div className="loader">

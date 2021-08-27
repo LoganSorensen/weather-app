@@ -135,35 +135,35 @@ table {
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao4CP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao4CP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaooCP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoooCP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpYCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVsEpYCP.ttf) format('truetype');
 }
 @font-face {
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/raleway/v19/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pYCP.ttf) format('truetype');
+  src: url(https://fonts.gstatic.com/s/raleway/v22/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pYCP.ttf) format('truetype');
 }
 html {
   font-size: 62.5%;
@@ -201,6 +201,7 @@ html {
 .forecast-and-highlights {
   padding: 2% 10% 5%;
   width: 100%;
+  margin-left: 25vw;
 }
 @media (max-width: 1440px) {
   .forecast-and-highlights {
@@ -210,11 +211,7 @@ html {
 @media (max-width: 1024px) {
   .forecast-and-highlights {
     padding: 2% 4%;
-  }
-}
-@media (max-width: 768px) {
-  .forecast-and-highlights {
-    margin-left: 30%;
+    margin-left: 30vw;
   }
 }
 @media (max-width: 500px) {
@@ -253,21 +250,16 @@ html {
 }
 .sidebar {
   background-color: #1e213a;
-  height: 100vh;
-  min-width: 25%;
-  max-width: 25%;
+  min-width: 25vw;
+  max-width: 25vw;
   padding: 2%;
   overflow: hidden;
+  position: fixed;
 }
 @media (max-width: 1024px) {
   .sidebar {
-    min-width: 30%;
-    max-width: 30%;
-  }
-}
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
+    min-width: 30vw;
+    max-width: 30vw;
   }
 }
 @media (max-width: 500px) {
@@ -547,7 +539,8 @@ html {
   font-size: 1.6rem;
   font-weight: 500;
   width: 15%;
-  height: 100%;
+  height: 22vh;
+  min-height: 20rem;
   padding: 2%;
   text-align: center;
   display: flex;
@@ -590,7 +583,7 @@ html {
 }
 @media (max-width: 1024px) {
   .forecast .weather-card .temperatures {
-    widtH: 100%;
+    width: 100%;
   }
 }
 .forecast .weather-card .min-temp {
@@ -628,6 +621,7 @@ html {
   background-color: #1e213a;
   width: 47%;
   height: 40%;
+  min-height: 15rem;
   padding: 3%;
   text-align: center;
   margin-top: 5%;
@@ -674,6 +668,7 @@ html {
 }
 .highlights .top-card {
   height: 50%;
+  min-height: 18rem;
   margin: 0;
 }
 @media (max-width: 768px) {

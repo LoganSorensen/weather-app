@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useLayoutEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faLocationArrow,
@@ -32,8 +32,23 @@ const SideBar = ({ cityName, weather, isCelcius, isLoading, getLocation }) => {
     }
   };
 
+  // updates window.innerHeight on resize
+  const useWindowSize = () => {
+    const [height, setHeight] = useState(window.innerHeight);
+
+    useLayoutEffect(() => {
+      function updateHeight() {
+        setHeight(window.innerHeight);
+      }
+      window.addEventListener("resize", updateHeight);
+      updateHeight();
+      return () => window.removeEventListener("resize", updateHeight);
+    }, []);
+    return height;
+  };
+
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{ height: useWindowSize() }}>
       {isLoading ? (
         <div className="loader search-loader">
           <Loader

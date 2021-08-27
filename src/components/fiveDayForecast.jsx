@@ -34,15 +34,15 @@ const FiveDayForecast = (props) => {
           setWeatherImg(weather);
           return (
             <div className="weather-card" key={weather.id}>
-              <div className='date-and-icon'>
+              <div className="date-and-icon">
                 <span className="day-of-week">
                   {formatDate(weather.applicable_date)}
                 </span>
-                <img
-                  src={`/assets/${setWeatherImg(weather)}.png`}
-                  alt="weather type icon"
-                />
               </div>
+              <img
+                src={`/assets/${setWeatherImg(weather)}.png`}
+                alt="weather type icon"
+              />
               <div className="temperatures">
                 <span>
                   {setTemp(weather.max_temp)}

@@ -1,18 +1,14 @@
 .sidebar {
   background-color: @bg-light;
-  height: 100vh;
-  min-width: 25%;
-  max-width: 25%;
+  min-width: 25vw;
+  max-width: 25vw;
   padding: 2%;
   overflow: hidden;
-  
-  @media @laptop {
-    min-width: 30%;
-    max-width: 30%;
-  }
+  position: fixed;
 
-  @media @tablet {
-    position: fixed;
+  @media @laptop {
+    min-width: 30vw;
+    max-width: 30vw;
   }
 
   @media @mobile-large {
